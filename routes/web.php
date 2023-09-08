@@ -17,7 +17,9 @@ use App\Http\Controllers\EmpresaTareaPendientesController;
 |
 */
 
-Route::get('/', [WelcomeController::class,'index'])->name('welcome');
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('/lista', [ListaTareasPendientesController::class,'index'])->name('lista');
 Route::get('/empresa', [EmpresaTareaPendientesController::class,'index'])->name('empresa');
 Route::get('/usuario', [UsuariosMenosTareasController::class,'index'])->name('usuario');
