@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\UsuariosMenosTareasController;
+use App\Http\Controllers\ListaTareasPendientesController;
+use App\Http\Controllers\EmpresaTareaPendientesController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', [WelcomeController::class,'index'])->name('welcome');
+Route::get('/lista', [ListaTareasPendientesController::class,'index'])->name('lista');
+Route::get('/empresa', [EmpresaTareaPendientesController::class,'index'])->name('empresa');
+Route::get('/usuario', [UsuariosMenosTareasController::class,'index'])->name('usuario');
